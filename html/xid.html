@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Who Is XId?</h2>
+
+Enter XID <input type="text" id="xid" onblur="getXid()" onmouseout="getXid()" onkeydown="keydownFunction(event)">
+<script>
+function keydownFunction(e) {
+    console.log(e);
+    if(e.key === 'Enter' || e.keyCode === 13) {
+        getXid();
+    }
+}
+
+function getXid() {
+    var xid = document.getElementById("xid").value;
+    var url = "http://eglswnvm565:8080/Username.aspx?id=" + xid;
+    document.getElementById("iframe").setAttribute("src", url);
+}
+</script>
+<br>
+<iframe id="iframe" height="200" width="700">
+</body>
+</html>
+
